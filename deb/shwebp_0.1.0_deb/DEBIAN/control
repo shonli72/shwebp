@@ -1,0 +1,10 @@
+Package: shwebp
+Version: 0.1.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Heiko <kontakt@schnitzler-heiko.de>
+Description: Converts images (JPG, PNG, BMP, TIFF, HEIF) to WebP.
+ A Bash script for converting various image formats to WebP.
+ Provides recursive processing, logging, quality control, and more.
+
