@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Delete Symbolic Link
+if [ -L /usr/local/bin/shwebp ]; then
+    rm -f /usr/local/bin/shwebp
+fi
+
+# Delete Installation directory
+if [ -d /usr/local/shwebp ]; then
+    rm -rf /usr/local/shwebp
+fi
+
+# Delete Manpages
+rm -f /usr/local/share/man/man1/shwebp.1.gz
+rm -f /usr/local/share/man/de/man1/shwebp.1.de.gz
+
+# Delete directory in ~/.shscripts/shwebp of the actual user
+USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
+if [ -n "$USER_HOME" ] && [ -d "$USER_HOME/.shscripts/shwebp" ]; then
+    rm -rf "$USER_HOME/.shscripts/shwebp"
+fi
+
+exit 0
+
