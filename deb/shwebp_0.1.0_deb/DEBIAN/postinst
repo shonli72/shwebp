@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Create symolic link to /usr/local/shwebp/shwebp
+ln -sf /usr/local/shwebp/shwebp /usr/local/bin/shwebp
