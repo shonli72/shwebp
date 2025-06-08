@@ -1,0 +1,66 @@
+.TH SHWEBP 1 "June 2025" "Version 0.1.0" "Image Converter Script Manual"
+.SH NAME
+shwebp \- Convert images (JPG, PNG, TIFF, HEIC, HEIF) to WebP using cwebp
+.SH SYNOPSIS
+.B shwebp
+[\fIOPTIONS\fR]
+.SH DESCRIPTION
+\fBshwebp\fR is a Bash script that converts image files (JPG, PNG, TIFF, HEIC, HEIF) to the efficient WebP format using \fBcwebp\fR and, where needed, \fBheif-convert\fR.
+
+It supports recursive processing, logging, dry-run mode, adjustable quality, silent-mode, force overwrite and selection of source and destination directories.
+
+.SH OPTIONS
+.TP
+\fB-R\fR
+Process directories recursively.
+.TP
+\fB-q\fR \fI1-100\fR
+Set WebP quality (default: 75, lowest: 1, highest: 100).
+.TP
+\fB-l\fR
+Enable logging. Logs are saved in \fI~/.shscripts/shwebp\fR.
+.TP
+\fB--dry-run\fR
+Simulate conversions without changing files.
+.TP
+\fB-f\fR
+Force overwrite existing .webp files.
+.TP
+\fB-s\fR \fI"dir1,dir2"\fR
+Specify comma-separated list of source directories.
+.TP
+\fB-t\fR \fI"target-dir"\fR
+Specify a target directory for converted files.
+.TP
+\fB-S, --silent\fR
+Suppress terminal output (only logs will be written).
+.TP
+\fB-h, --help\fR
+Display help and usage information.
+.TP
+\fB-v, --version\fR
+Show script version and exit.
+
+.SH EXAMPLES
+Convert all JPG/PNG/TIFF images in current directory:
+.br
+\fBshwebp\fR
+
+Convert recursively with quality 85 and logging:
+.br
+\fBshwebp -R -q 85 -l\fR
+
+Dry-run for two folders with custom target:
+.br
+\fBshwebp -s "images,photos" -t "webp_out" --dry-run\fR
+
+.SH AUTHOR
+Heiko <kontakt@schnitzler-heiko.de>
+
+.SH LICENSE
+This software is licensed under the GNU General Public License v3.0 (GPLv3).
+See https://www.gnu.org/licenses/gpl-3.0.html for details.
+
+.SH SEE ALSO
+.BR cwebp (1),
+.BR heif-convert (1)
