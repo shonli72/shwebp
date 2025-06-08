@@ -1,0 +1,22 @@
+# Build-Artefakte (außer dist/)
+*.deb
+*.tar.gz
+!dist/*.deb
+!dist/*.tar.gz
+
+# Logdateien
+*.log
+
+# Temporäre Dateien / Sicherungen
+*~
+*.bak
+*.swp
+*.tmp
+
+# System- und Explorerdateien
+.DS_Store
+Thumbs.db
+
+# Editor-spezifisch (z. B. VSCode)
+.vscode/
+.idea/
